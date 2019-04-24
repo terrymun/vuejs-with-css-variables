@@ -1,0 +1,17 @@
+// Units
+$base-unit: 8px;
+
+// Typography
+$base-font-size: $base-unit * 2.5;
+$base-font-size--lg: $base-unit * 4;
+$base-font-size--xl: $base-unit * 5;
+
+$base-line-height: $base-unit * 4;
+$base-line-height--lg: $base-unit * 5;
+$base-line-height--xl: $base-unit * 6;
+
+$base-font-weight: 400;
+$base-font-weight--bold: 700;
+
+// Transition
+$base-transition: all 0.35s ease-in-out;
