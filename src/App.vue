@@ -8,6 +8,7 @@
 
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator';
+import { Theme, ThemePropertiesDictionary } from '@/themes/theme.types';
 
 @Component({
   name: 'App',
@@ -33,10 +34,9 @@ export default class App extends Vue {
   /** @method - lifecycle hook */
   public created(): void {
     import(/* webpackChunkName: "theme" */ `@/themes/${this.theme}.ts`).then((module) => {
-      const theme = module.default as { [key: string]: string };
-      const properties = module.ThemeProperties as { [key: string]: string };
+      const theme = module.default as Theme;
 
-      Object.entries(properties).forEach((entry) => {
+      Object.entries(ThemePropertiesDictionary).forEach((entry) => {
         const key = entry[0];
         const property = entry[1];
 
@@ -57,8 +57,8 @@ export default class App extends Vue {
 #app {
   min-height: 100vh;
   padding: ($base-unit * 8) ($base-unit * 10);
-  background-color: var(--background-color);
-  color: var(--text-color);
+  background-color: var(--app-background-color);
+  color: var(--app-text-color);
   opacity: 0;
   transition: $base-transition;
 }
