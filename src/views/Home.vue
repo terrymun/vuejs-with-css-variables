@@ -4,7 +4,8 @@
     <span class="byline">By Terry Mun</span>
 
     <p>
-      This is the home page that collects all the links to subpages demonstrationg how CSS variables can be used in the context of VueJS.
+      This is the home page that collects all the links to subpages demonstrationg how CSS
+      variables can be used in the context of VueJS.
     </p>
 
     <ul>
