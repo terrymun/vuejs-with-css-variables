@@ -22,6 +22,7 @@ export type Theme = Dictionary<string>;
 /** @enum */
 export enum ThemePropertiesDictionary {
   appBackgroundColor = '--app-background-color',
+  appExternalIcon = '--app-external-icon',
   appInputBorderColor = '--app-input-border-color',
   appLinkColor = '--app-link-color',
   appTextColor = '--app-text-color',

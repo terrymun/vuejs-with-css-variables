@@ -38,6 +38,19 @@ p {
   margin-bottom: $base-unit * 2;
 }
 
+// Links
+a[href^='http']::after {
+  position: relative;
+  top: .1em;
+  display: inline-block;
+  margin-left: $base-unit * 0.25;
+  background-image: var(--app-external-icon);
+  background-size: $base-unit * 2.5;
+  width: $base-unit * 2.5;
+  height: $base-unit * 2.5;
+  content: '';   
+}
+
 // Code
 code {
   font-family: 'Consolas', 'Courier New', monospace;
