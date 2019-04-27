@@ -1,4 +1,4 @@
-import externalIcon from '@/framework/utils/externalIcon.util';
+import { externalIcon } from '@/framework/helpers';
 
 const appLinkColor = '#69B3B5';
 

@@ -1,6 +1,6 @@
-import externalIcon from '@/framework/utils/externalIcon.util';
+import { externalIcon } from '@/framework/helpers';
 
-const appLinkColor = 'steelblue';
+const appLinkColor = '#4682b4';
 
 export default {
   appBackgroundColor: '#eee',

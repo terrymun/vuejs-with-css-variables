@@ -1,5 +1,5 @@
 /** @method */
-export default function externalIcon(fill: string = '#000'): string {
+export function externalIcon(fill: string = '#000'): string {
   // Data URI requires that `#` be escaped properly
   const encodedFill = encodeURIComponent(fill);
 

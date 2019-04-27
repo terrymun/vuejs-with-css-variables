@@ -7,7 +7,11 @@ export interface AppStore {
   theme: ThemeName;
 }
 
-@Module({ dynamic: true, store, name: 'App '})
+@Module({
+  dynamic: true,
+  store,
+  name: 'App',
+})
 class App extends VuexModule implements AppStore {
   public theme: ThemeName = ThemeName.LIGHT;
 
@@ -22,4 +26,4 @@ class App extends VuexModule implements AppStore {
   }
 }
 
-export const appStore = getModule(App)
+export const appStore = getModule(App);

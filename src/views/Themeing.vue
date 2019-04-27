@@ -1,5 +1,5 @@
 <template>
-  <div class="theming">
+  <section>
     <h1>Themeing</h1>
     <router-link to="/">Back</router-link>
 
@@ -35,7 +35,7 @@
       variable names and their corresponding values. This dictionary is enumerated to set
       all CSS variables contained inside it.
     </p>
-  </div>
+  </section>
 </template>
 
 <script lang="ts">

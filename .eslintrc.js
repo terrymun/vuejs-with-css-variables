@@ -15,6 +15,7 @@ module.exports = {
     'object-curly-newline': ['error', {
       'ImportDeclaration': 'never',
     }],
+    'import/prefer-default-export': ['off'],
   },
   parserOptions: {
     parser: '@typescript-eslint/parser',

@@ -1,9 +1,9 @@
 <template>
-  <div
+  <main
     id="app"
     v-bind:style="rootCssStyleObject">
     <router-view/>
-  </div>
+  </main>
 </template>
 
 <script lang="ts">

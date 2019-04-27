@@ -1,5 +1,5 @@
 <template>
-  <div class="home">
+  <section>
     <h1>VueJS + CSS variables</h1>
     <span class="byline">By Terry Mun</span>
 
@@ -9,14 +9,14 @@
     </p>
 
     <ul>
+      <li><router-link to="/icon-styling">Icon Styling</router-link></li>
       <li><router-link to="/themeing">Themeing</router-link></li>
     </ul>
-  </div>
+  </section>
 </template>
 
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator';
-import HelloWorld from '@/components/HelloWorld.vue'; // @ is an alias to /src
 
 @Component({
   name: 'Home',
