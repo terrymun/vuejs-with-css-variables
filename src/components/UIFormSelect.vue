@@ -36,6 +36,7 @@ export default class UIFormSelect extends Vue {
   background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="32" height="24" viewBox="0 0 32 24"><path d="M7 10l5 5 5-5z"/></svg>');
   background-repeat: no-repeat;
   background-position: center right;
+  @include font($base-font-size, $base-line-height);
   transition: $base-transition;
   outline: none;
 

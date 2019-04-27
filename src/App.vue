@@ -66,6 +66,9 @@ export default class App extends Vue {
 </script>
 
 <style lang="scss">
+@import "@/styles/_reset.scss";
+@import "@/styles/_typography.scss";
+
 * {
   box-sizing: border-box;
 }
