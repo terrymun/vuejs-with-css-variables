@@ -7,8 +7,10 @@
 </template>
 
 <script lang="ts">
-import { Component, Vue } from 'vue-property-decorator';
-import { Theme, ThemePropertiesDictionary } from '@/themes/theme.types';
+import { Component, Watch, Vue } from 'vue-property-decorator';
+import { Theme, ThemeName, ThemePropertiesDictionary } from '@/themes/theme.types';
+
+import { appStore } from '@/store/modules/app';
 
 @Component({
   name: 'App',
@@ -16,9 +18,12 @@ import { Theme, ThemePropertiesDictionary } from '@/themes/theme.types';
 export default class App extends Vue {
   public readonly $el!: HTMLElement;
 
-  public readonly theme: string = 'light';
-
   public isThemeReady: boolean = false;
+
+  /** @property */
+  public get theme(): ThemeName {
+    return appStore.theme;
+  }
 
   /** @property */
   public get rootCssStyleObject(): Partial<CSSStyleDeclaration> {
@@ -33,7 +38,20 @@ export default class App extends Vue {
 
   /** @method - lifecycle hook */
   public created(): void {
-    import(/* webpackChunkName: "theme" */ `@/themes/${this.theme}.ts`).then((module) => {
+    this.setTheme().then(() => {
+      this.isThemeReady = true;
+    });
+  }
+
+  /** @method - watcher */
+  @Watch('theme')
+  public onThemeChange(): void {
+    this.setTheme();
+  }
+
+  /** @method */
+  public async setTheme(): Promise<void> {
+    return import(/* webpackChunkName: "theme" */ `@/themes/${this.theme}.ts`).then((module) => {
       const theme = module.default as Theme;
 
       Object.entries(ThemePropertiesDictionary).forEach((entry) => {
@@ -42,8 +60,6 @@ export default class App extends Vue {
 
         this.$el.style.setProperty(property, theme[key]);
       });
-
-      this.isThemeReady = true;
     });
   }
 }
@@ -60,6 +76,19 @@ export default class App extends Vue {
   background-color: var(--app-background-color);
   color: var(--app-text-color);
   opacity: 0;
+  transition: $base-transition;
+}
+
+a {
+  color: var(--app-link-color);
+  transition: $base-transition;
+}
+
+code {
+  padding: $base-unit ($base-unit * 1.5) ($base-unit * 0.75);
+  border-radius: $base-border-radius;
+  background-color: var(--app-input-border-color);
+  color: var(--app-text-color);
   transition: $base-transition;
 }
 </style>

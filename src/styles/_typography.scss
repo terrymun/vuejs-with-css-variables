@@ -19,7 +19,8 @@ h2 {
 
 h1,
 h2 {
-  margin-bottom: $base-unit * 3;
+  margin-top: $base-unit * 5;
+  margin-bottom: $base-unit * 2;
 
   & + .byline {
     display: block;
@@ -28,7 +29,16 @@ h2 {
   }
 }
 
+h1 {
+  margin-top: 0;
+}
+
 // Text
 p {
   margin-bottom: $base-unit * 2;
+}
+
+// Code
+code {
+  font-family: 'Consolas', 'Courier New', monospace;
 }
