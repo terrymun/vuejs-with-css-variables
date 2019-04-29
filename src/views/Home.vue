@@ -1,7 +1,7 @@
 <template>
   <section>
     <h1>VueJS + CSS variables</h1>
-    <span class="byline">By Terry Mun</span>
+    <span class="byline">By <span class="author">Terry Mun</span></span>
 
     <p>
       This is the home page that collects all the links to subpages demonstrationg how CSS
@@ -23,3 +23,10 @@ import { Component, Vue } from 'vue-property-decorator';
 })
 export default class Home extends Vue {}
 </script>
+
+<style lang="scss" scoped>
+.author {
+  color: var(--app-link-color);
+  font-weight: bold;
+}
+</style>

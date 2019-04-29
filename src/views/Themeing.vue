@@ -1,7 +1,7 @@
 <template>
   <section>
     <h1>Themeing</h1>
-    <router-link to="/">Back</router-link>
+    <span class="byline"><router-link to="/">Back</router-link></span>
 
     <h2>Fetching a theme asynchronously</h2>
     <p>

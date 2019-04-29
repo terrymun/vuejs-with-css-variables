@@ -1,7 +1,7 @@
 <template>
   <section>
     <h1>Icon Styling</h1>
-    <router-link to="/">Back</router-link>
+    <span class="byline"><router-link to="/">Back</router-link></span>
 
     <p>
       In some cases, we don&rsquo;t want to create multiple identical icons that differ only in
@@ -100,7 +100,7 @@ import UIFormControlGroup from '@/components/UIFormControlGroup.vue';
 import UIFormLabel from '@/components/UIFormLabel.vue';
 import UIFormColorInput from '@/components/UIFormColorInput.vue';
 import UIIcon from '@/components/UIIcon.vue';
-import { Dictionary } from '@/types';
+import { VueCssStyleObject } from '@/types';
 import { toSentenceCase } from '@/framework/utils';
 import tinycolor from 'tinycolor2';
 
@@ -153,8 +153,8 @@ export default class IconStyling extends Vue {
   public activeGridItem: GridItemPosition | null = null;
 
   /** @property */
-  public get lightBulbIconCssStyleObject(): Dictionary<string | null> {
-    const style = {} as Dictionary<string | null>;
+  public get lightBulbIconCssStyleObject(): VueCssStyleObject {
+    const style = {} as VueCssStyleObject;
 
     this.lightBulbIconCssVars.forEach((variable) => {
       const color = tinycolor(variable.value);
@@ -170,7 +170,7 @@ export default class IconStyling extends Vue {
   }
 
   /** @property */
-  public get gridIconCssStyleObject(): Dictionary<string | null> {
+  public get gridIconCssStyleObject(): VueCssStyleObject {
     return {
       '--top-left-item-fill': this.activeGridItem === GridItemPosition.TOP_LEFT ? '#4682b4' : null,
       '--top-right-item-fill': this.activeGridItem === GridItemPosition.TOP_RIGHT ? '#4682b4' : null,
