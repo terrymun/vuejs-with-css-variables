@@ -9,6 +9,7 @@
     </p>
 
     <ul>
+      <li><router-link to="/pseudo-element-styling">Pseudo-element Styling</router-link></li>
       <li><router-link to="/icon-styling">Icon Styling</router-link></li>
       <li><router-link to="/themeing">Themeing</router-link></li>
     </ul>

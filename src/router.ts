@@ -13,6 +13,11 @@ export default new Router({
       component: Home,
     },
     {
+      path: '/pseudo-element-styling',
+      name: 'pseudo-element-styling',
+      component: () => import(/* webpackChunkName: "pseudo-element-styling" */ './views/PseudoElementStyling.vue'),
+    },
+    {
       path: '/icon-styling',
       name: 'icon-styling',
       component: () => import(/* webpackChunkName: "icon-styling" */ './views/IconStyling.vue'),
