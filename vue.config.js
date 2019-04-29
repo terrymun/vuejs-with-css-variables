@@ -1,6 +1,11 @@
 const path = require('path');
 
 module.exports = {
+  // Update this if deploying elsewhere, because this path is hardcoded to work with the repo name in the URL
+  publicPath: process.env.NODE_ENV === 'production'
+    ? '/vuejs-with-css-variables/'
+    : '/',
+
   css: {
     loaderOptions: {
       sass: {
