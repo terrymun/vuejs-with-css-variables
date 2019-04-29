@@ -43,7 +43,7 @@ import { Component, Vue } from 'vue-property-decorator';
 import { Theme, ThemeLabel, ThemeName, ThemePropertiesDictionary } from '@/themes/theme.types';
 import UIFormSelect from '@/components/UIFormSelect.vue';
 
-import { appStore } from '@/store/modules/app';
+import { appState } from '@/store/modules/app';
 
 /** @interface */
 interface ThemeOption {
@@ -60,12 +60,12 @@ interface ThemeOption {
 export default class Themeing extends Vue {
   /** @property */
   public get activeTheme(): ThemeName {
-    return appStore.theme;
+    return appState.theme;
   }
 
   /** @property */
   public set activeTheme(themeName: ThemeName) {
-    appStore.setTheme(themeName);
+    appState.setTheme(themeName);
   }
 
   /** @property */

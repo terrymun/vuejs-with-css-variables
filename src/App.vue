@@ -10,7 +10,7 @@
 import { Component, Watch, Vue } from 'vue-property-decorator';
 import { Theme, ThemeName, ThemePropertiesDictionary } from '@/themes/theme.types';
 
-import { appStore } from '@/store/modules/app';
+import { appState } from '@/store/modules/app';
 
 @Component({
   name: 'App',
@@ -22,7 +22,7 @@ export default class App extends Vue {
 
   /** @property */
   public get theme(): ThemeName {
-    return appStore.theme;
+    return appState.theme;
   }
 
   /** @property */
@@ -93,5 +93,11 @@ code {
   background-color: var(--app-input-border-color);
   color: var(--app-text-color);
   transition: $base-transition;
+}
+
+@media (max-width: 400px) {
+  #app {
+    padding: ($base-unit * 4) ($base-unit * 6);
+  }
 }
 </style>

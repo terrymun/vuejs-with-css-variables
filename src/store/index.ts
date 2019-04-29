@@ -1,12 +1,12 @@
 import Vue from 'vue';
 import Vuex from 'vuex';
-import { AppStore } from './modules/app';
+import { AppState } from '@/store/modules/app';
 
 Vue.use(Vuex);
 
 /** @interface */
-export interface Store {
-  app: AppStore;
+export interface RootState {
+  app: AppState;
 }
 
-export default new Vuex.Store<Store>({});
+export default new Vuex.Store<RootState>({});

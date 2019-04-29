@@ -3,7 +3,7 @@ import { ThemeName } from '@/themes/theme.types';
 import store from '@/store';
 
 /** @interface */
-export interface AppStore {
+export interface AppState {
   theme: ThemeName;
 }
 
@@ -12,7 +12,7 @@ export interface AppStore {
   store,
   name: 'App',
 })
-class App extends VuexModule implements AppStore {
+class App extends VuexModule implements AppState {
   public theme: ThemeName = ThemeName.LIGHT;
 
   @Action({ commit: 'SET_THEME' })
@@ -26,4 +26,4 @@ class App extends VuexModule implements AppStore {
   }
 }
 
-export const appStore = getModule(App);
+export const appState = getModule(App);

@@ -257,4 +257,26 @@ $gridItemPositions: topLeft topRight bottomRight bottomLeft;
     grid-area: $gridItemPosition;
   }
 }
+
+@media (max-width: 768px) {
+  .icon-editor {
+    flex-wrap: wrap;
+  }
+
+  .icon-editor__stage,
+  .icon-editor__controls {
+    width: 100%;
+  }
+
+  .icon-editor__stage {
+    margin-bottom: $base-unit * 3;
+  }
+}
+
+@media (orientation: landscape) and (max-width: 812px) {
+  .grid {
+    grid-template-rows: repeat(3, 1fr);
+    height: 75vh;
+  }
+}
 </style>

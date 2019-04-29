@@ -39,13 +39,26 @@ export default class UIFormControlGroup extends Vue {
 .form-control-group__label {
   flex: 0 0 ($base-unit * 25);
   margin-right: $base-unit * 2;
-}
-
-.form-control-group__control {
-  flex: 0 0 auto;
+  text-align: right;
 }
 
 .form-control-group__output {
   margin-left: $base-unit * 2;
+}
+
+@media (max-width: 768px) {
+  .form-control-group {
+    flex-wrap: wrap;
+  }
+
+  .form-control-group__label,
+  .form-control-group__control {
+    flex: 1 1 100%;
+  }
+
+  .form-control-group__label {
+    margin-right: 0;
+    text-align: left;
+  }
 }
 </style>

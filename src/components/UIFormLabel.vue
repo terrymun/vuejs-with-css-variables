@@ -23,7 +23,6 @@ export default class UIFormLabel extends Vue {
   opacity: 0.75;
   letter-spacing: 2px;
   text-transform: uppercase;
-  text-align: right;
 
   &[for] {
     cursor: pointer;
