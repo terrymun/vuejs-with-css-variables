@@ -44,7 +44,7 @@ export default class DummyColorPicker extends Vue {
 
   public isDragging: boolean = false;
 
-  public color: string = '#000000';
+  public color: string = '#ffffff';
 
   public hue: number = 0;
 
@@ -96,7 +96,7 @@ export default class DummyColorPicker extends Vue {
     const s = this.x / this.$refs.canvas.clientWidth;
     const v = clamp(-(this.y / this.$refs.canvas.clientHeight) + 1, 0, 1);
 
-    this.color = tinycolor({ h, s, v }).toRgbString();
+    this.color = tinycolor({ h, s, v }).toHexString();
   }
 }
 </script>
