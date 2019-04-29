@@ -1,0 +1,8 @@
+<!-- Derived from material icon: dashboard -->
+<!-- The original icon has been changed to isolate compound paths for ease of styling -->
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+  <path d="M3 3h8v10H3z" id="top-left" fill="var(--top-left-item-fill)"/>
+  <path d="M13 3h8v6h-8z" id="top-right" fill="var(--top-right-item-fill)"/>
+  <path d="M13 11h8v10h-8z" id="bottom-right" fill="var(--bottom-right-item-fill)"/>
+  <path d="M3 15h8v6H3z" id="bottom-left" fill="var(--bottom-left-item-fill)"/>
+</svg>

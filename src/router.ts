@@ -14,6 +14,11 @@ export default new Router({
       component: Home,
     },
     {
+      path: '/icon-styling',
+      name: 'icon-styling',
+      component: () => import(/* webpackChunkName: "icon-styling" */ './views/IconStyling.vue'),
+    },
+    {
       path: '/themeing',
       name: 'themeing',
       component: () => import(/* webpackChunkName: "themeing" */ './views/Themeing.vue'),

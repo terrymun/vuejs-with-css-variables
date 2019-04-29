@@ -32,11 +32,12 @@ export default class UIFormSelect extends Vue {
   height: $base-unit * 5;
   padding: 0 ($base-unit * 5) 0 ($base-unit * 2);
   border: 1px solid var(--app-input-border-color);
+  border-radius: $base-border-radius;
   appearance: none;
   background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="32" height="24" viewBox="0 0 32 24"><path d="M7 10l5 5 5-5z"/></svg>');
   background-repeat: no-repeat;
   background-position: center right;
-  @include font($base-font-size, $base-line-height);
+  @include font($base-font-size, $base-unit * 5);
   transition: $base-transition;
   outline: none;
 
