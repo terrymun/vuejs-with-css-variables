@@ -5,16 +5,20 @@
       class="color-input__native"
       ref="native"
       v-bind:id="id"
+      v-bind:readonly="readonly"
       v-bind:value="color"
       v-on:input="onColorInput" />
     <UIFormInput
       ref="textInput"
       autocomplete="off"
       spellcheck="false"
+      v-bind:readonly="readonly"
       v-bind:value="color"
       v-bind:live="false"
       v-on:input="onTextInput">
-      <template v-slot:after>
+      <template
+        v-slot:after
+        v-if="!readonly">
         <UIFormLabel v-bind:for="id">
           <UIIcon name="colorpicker" />
         </UIFormLabel>
@@ -50,6 +54,9 @@ export default class UIFormColorInput extends Vue {
 
   @Prop({ type: String, default: '#000' })
   public readonly value!: string;
+
+  @Prop({ type: Boolean })
+  public readonly readonly!: boolean;
 
   @Prop({
     type: String,
