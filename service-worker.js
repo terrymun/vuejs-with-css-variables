@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox-sw.js");
 
 importScripts(
-  "/vuejs-with-css-variables/precache-manifest.9ccd8a51a153861e5b881c60d6e6ed2d.js"
+  "/vuejs-with-css-variables/precache-manifest.10d7f77fb4abd51376baffbe94d7fe66.js"
 );
 
 workbox.core.setCacheNameDetails({prefix: "vuejs-with-css-variables"});

@@ -1,11 +1,11 @@
 self.__precacheManifest = [
   {
-    "revision": "6e8f070f02baf47b46e1",
+    "revision": "55cb536d54e8d9a3d527",
     "url": "/vuejs-with-css-variables/css/app.37ae5090.css"
   },
   {
-    "revision": "6e8f070f02baf47b46e1",
-    "url": "/vuejs-with-css-variables/js/app.1d93881b.js"
+    "revision": "55cb536d54e8d9a3d527",
+    "url": "/vuejs-with-css-variables/js/app.401474fa.js"
   },
   {
     "revision": "84eb7a18cb79bc3cdebc",
@@ -44,7 +44,7 @@ self.__precacheManifest = [
     "url": "/vuejs-with-css-variables/js/themeing.3d091914.js"
   },
   {
-    "revision": "ea9fd7a882d97edefab38a3cbc35681a",
+    "revision": "0c00f1bfb487142cc2a409aeac61cbce",
     "url": "/vuejs-with-css-variables/index.html"
   },
   {
