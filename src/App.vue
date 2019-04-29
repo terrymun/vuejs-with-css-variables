@@ -82,19 +82,6 @@ export default class App extends Vue {
   transition: $base-transition;
 }
 
-a {
-  color: var(--app-link-color);
-  transition: $base-transition;
-}
-
-code {
-  padding: $base-unit ($base-unit * 1.5) ($base-unit * 0.75);
-  border-radius: $base-border-radius;
-  background-color: var(--app-input-border-color);
-  color: var(--app-text-color);
-  transition: $base-transition;
-}
-
 @media (max-width: 400px) {
   #app {
     padding: ($base-unit * 4) ($base-unit * 6);

@@ -39,16 +39,21 @@ p {
 }
 
 // Links
-a[href^='http']::after {
-  position: relative;
-  top: .1em;
-  display: inline-block;
-  margin-left: $base-unit * 0.25;
-  background-image: var(--app-external-icon);
-  background-size: $base-unit * 2.5;
-  width: $base-unit * 2.5;
-  height: $base-unit * 2.5;
-  content: '';   
+a {
+  color: var(--app-link-color);
+  transition: $base-transition;
+
+  &[href^='http']::after {
+    position: relative;
+    top: .1em;
+    display: inline-block;
+    margin-left: $base-unit * 0.25;
+    background-image: var(--app-external-icon);
+    background-size: $base-unit * 2.5;
+    width: $base-unit * 2.5;
+    height: $base-unit * 2.5;
+    content: '';
+  }
 }
 
 // Code
@@ -57,7 +62,12 @@ pre {
 }
 
 code {
+  padding: ($base-unit * 0.5) ($base-unit * 1.5);
+  border-radius: $base-border-radius;
+  background-color: var(--app-input-border-color);
+  color: var(--app-text-color);
   font-family: $base-font-family--monospace;
+  transition: $base-transition;
 }
 
 pre code {
