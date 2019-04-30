@@ -1,11 +1,11 @@
 self.__precacheManifest = [
   {
-    "revision": "b3dd037e390c5d8356e1",
+    "revision": "5c1542e68ee40c610259",
     "url": "/vuejs-with-css-variables/css/app.2c24f004.css"
   },
   {
-    "revision": "b3dd037e390c5d8356e1",
-    "url": "/vuejs-with-css-variables/js/app.3c0d0845.js"
+    "revision": "5c1542e68ee40c610259",
+    "url": "/vuejs-with-css-variables/js/app.621311b8.js"
   },
   {
     "revision": "84eb7a18cb79bc3cdebc",
@@ -28,12 +28,12 @@ self.__precacheManifest = [
     "url": "/vuejs-with-css-variables/js/icon-styling~pseudo-element-styling.9a7cd9f8.js"
   },
   {
-    "revision": "980943c54b28a4b151cf",
-    "url": "/vuejs-with-css-variables/css/pseudo-element-styling.0a47ee2d.css"
+    "revision": "1afaa23ffc6f53552a34",
+    "url": "/vuejs-with-css-variables/css/pseudo-element-styling.23580a53.css"
   },
   {
-    "revision": "980943c54b28a4b151cf",
-    "url": "/vuejs-with-css-variables/js/pseudo-element-styling.b558e831.js"
+    "revision": "1afaa23ffc6f53552a34",
+    "url": "/vuejs-with-css-variables/js/pseudo-element-styling.7b2cd812.js"
   },
   {
     "revision": "a0faaf4e8ab123b88fbf",
@@ -60,7 +60,7 @@ self.__precacheManifest = [
     "url": "/vuejs-with-css-variables/js/themeing.c3c06aa5.js"
   },
   {
-    "revision": "b1f2c62b4f8c9d962b0f28277b3b13c9",
+    "revision": "2ead473e4c32856b333cb4d428451e06",
     "url": "/vuejs-with-css-variables/index.html"
   },
   {
