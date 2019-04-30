@@ -10,13 +10,7 @@
       v-on:mouseup="onMouseUp">
     </div>
 
-    <input
-      class="dummy-color-picker__hue-slider"
-      type="range"
-      min="0"
-      max="360"
-      step="1"
-      v-model.number="hue" />
+    <UIHueSlider v-model="hue" />
 
     <UIFormColorInput
       readonly
@@ -27,6 +21,7 @@
 <script lang="ts">
 import { Component, Watch, Vue } from 'vue-property-decorator';
 import UIFormColorInput from '@/components/UIFormColorInput.vue';
+import UIHueSlider from '@/components/UIHueSlider.vue';
 import tinycolor from 'tinycolor2';
 import { clamp } from '@/framework/utils';
 import { VueCssStyleObject } from '@/types';
@@ -35,6 +30,7 @@ import { VueCssStyleObject } from '@/types';
   name: 'DummyColorPicker',
   components: {
     UIFormColorInput,
+    UIHueSlider,
   },
 })
 export default class DummyColorPicker extends Vue {
@@ -147,64 +143,6 @@ export default class DummyColorPicker extends Vue {
       var(--color-picker-cursor-x, 0),
       var(--color-picker-cursor-y, $base-unit * 30)
     );
-  }
-}
-
-@mixin track() {
-  width: 100%;
-  height: $base-unit * 2;
-  border-radius: $base-border-radius;
-  background-image:
-    linear-gradient(
-      90deg,
-      #f00,
-      #ff0 17%,
-      #0f0 33%,
-      #0ff 50%,
-      #00f 67%,
-      #f0f 83%,
-      #f00
-    );
-  cursor: pointer;
-}
-
-@mixin thumb() {
-  width: $base-unit;
-  height: $base-unit * 3;
-  margin-top: -$base-unit * 0.5;
-  border: 1px solid rgba(#000, .25);
-  border-radius: $base-border-radius;
-  box-shadow: $base-box-shadow;
-  appearance: none;
-  background-color: #fff;
-}
-
-.dummy-color-picker__hue-slider {
-  width: 100%;
-  height: $base-unit * 3;
-  margin: $base-unit * 2 0;
-  border-radius: $base-border-radius;
-  appearance: none;
-  background: transparent;
-
-  &::-moz-range-track {
-    @include track();
-  }
-  &::-ms-track {
-    @include track();
-  }
-  &::-webkit-slider-runnable-track {
-    @include track();
-  }
-
-  &::-moz-range-thumb {
-    @include thumb();
-  }
-  &::-ms-thumb {
-    @include thumb();
-  }
-  &::-webkit-slider-thumb {
-    @include thumb();
   }
 }
 </style>

@@ -5,6 +5,7 @@
       ref="native"
       type="text"
       v-bind:autocomplete="autocomplete"
+      v-bind:readonly="readonly"
       v-bind:spellcheck="spellcheck"
       v-bind:value="value"
       v-on:blur="onBlur"
@@ -41,6 +42,9 @@ export default class UIFormInput extends Vue {
 
   @Prop({ type: String })
   public readonly autocomplete!: string;
+
+  @Prop({ type: Boolean })
+  public readonly readonly!: boolean;
 
   @Prop({ type: String })
   public readonly spellcheck!: string;

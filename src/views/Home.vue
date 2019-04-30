@@ -8,10 +8,17 @@
       variables can be used in the context of VueJS.
     </p>
 
-    <ul>
-      <li><router-link to="/pseudo-element-styling">Pseudo-element Styling</router-link></li>
-      <li><router-link to="/icon-styling">Icon Styling</router-link></li>
-      <li><router-link to="/themeing">Themeing</router-link></li>
+    <ul class="tiled-navigation">
+      <li class="tiled-navigation__item">
+        <router-link to="/pseudo-element-styling">Pseudo-element Styling</router-link>
+      </li>
+      <li class="tiled-navigation__item">
+      <li class="tiled-navigation__item" style="--from-h: 167;">
+        <router-link to="/icon-styling">Icon Styling</router-link>
+      </li>
+      <li class="tiled-navigation__item" style="--from-h: 147;">
+        <router-link to="/themeing">Themeing</router-link>
+      </li>
     </ul>
   </section>
 </template>
@@ -29,5 +36,48 @@ export default class Home extends Vue {}
 .author {
   color: var(--app-link-color);
   font-weight: bold;
+}
+
+.tiled-navigation {
+  display: flex;
+  flex-wrap: wrap;
+  flex: 1 1 auto;
+  margin: ($base-unit * 3) (-$base-unit);
+  padding: 0;
+}
+
+.tiled-navigation__item {
+  --from-h: 207;
+  --from-s: 44%;
+  --from-v: 49%;
+  --to-h: calc(var(--from-h) - 20);
+  --to-s: calc(var(--from-s) + 50%);
+  --to-v: calc(var(--from-v) - 20%);
+
+  margin: $base-unit;
+
+  a {
+    position: relative;
+    display: block;
+    padding: ($base-unit * 6) ($base-unit * 8);
+    border-radius: $base-border-radius;
+    background-image:
+      linear-gradient(
+        35deg,
+        hsl(var(--from-h), var(--from-s), var(--from-v)),
+        hsl(var(--to-h), var(--to-s), var(--to-v))
+      );
+    color: #eee;
+    @include font($base-font-size--lg, $base-line-height--lg);
+    font-weight: bold;
+    opacity: 0.85;
+    overflow: hidden;
+    text-decoration: none;
+    transition: $base-transition;
+
+    &:hover {
+      opacity: 1;
+    }
+  }
 }
 </style>
