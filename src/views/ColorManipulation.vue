@@ -10,29 +10,27 @@
       user input.
     </p>
 
-    <div class="grid">
+    <div
+      class="grid"
+      v-bind:style="boxStyleObject">
       <div class="grid__item">
-        <div
-          class="box"
-          v-bind:style="boxStyleObject"></div>
+        <div class="box"></div>
         Solid
       </div>
       <div class="grid__item">
-        <div
-          class="box box--hue-shifted"
-          v-bind:style="boxStyleObject"></div>
+        <div class="box box--hue-shifted"></div>
         Hue-shifted
       </div>
       <div class="grid__item">
-        <div
-          class="box box--shaded"
-          v-bind:style="boxStyleObject"></div>
+        <div class="box box--desaturated"></div>
+        Desaturated
+      </div>
+      <div class="grid__item">
+        <div class="box box--shaded"></div>
         Shaded
       </div>
       <div class="grid__item">
-        <div
-          class="box box--lightened"
-          v-bind:style="boxStyleObject"></div>
+        <div class="box box--lightened"></div>
         Lightened
       </div>
     </div>
@@ -130,15 +128,19 @@ export default class ColorManipulation extends Vue {
 .box {
   width: 15vmin;
   height: 15vmin;
-  margin-bottom: $base-unit * 2;
+  margin: 0 auto $base-unit * 2 auto;
   border-radius: 50%;
-  box-shadow: $base-box-shadow;
   background-color: hsl(var(--h, 0), var(--s, 0%), var(--l, 0%));
 }
 
 .box--hue-shifted {
   --h-shifted: calc(var(--h) + 30);
   background-color: hsl(var(--h-shifted, 0), var(--s, 0%), var(--l, 0%));
+}
+
+.box--desaturated {
+  --s-desaturated: calc(var(--s) - 50%);
+  background-color: hsl(var(--h, 0), var(--s-desaturated, 0%), var(--l, 0%));
 }
 
 .box--shaded {
