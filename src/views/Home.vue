@@ -12,13 +12,13 @@
       <li class="tiled-navigation__item">
         <router-link to="/pseudo-element-styling">Pseudo-element Styling</router-link>
       </li>
-      <li class="tiled-navigation__item" style="--from-h: 187;">
+      <li class="tiled-navigation__item" style="--from-h: 147;">
         <router-link to="/color-manipulation">Color manipulation</router-link>
       </li>
-      <li class="tiled-navigation__item" style="--from-h: 167;">
+      <li class="tiled-navigation__item" style="--from-h: 87;">
         <router-link to="/icon-styling">Icon Styling</router-link>
       </li>
-      <li class="tiled-navigation__item" style="--from-h: 147;">
+      <li class="tiled-navigation__item" style="--from-h: 37;">
         <router-link to="/themeing">Themeing</router-link>
       </li>
     </ul>
@@ -52,9 +52,9 @@ export default class Home extends Vue {}
   --from-h: 207;
   --from-s: 44%;
   --from-l: 49%;
-  --to-h: calc(var(--from-h) - 20);
-  --to-s: calc(var(--from-s) + 50%);
-  --to-l: calc(var(--from-l) - 20%);
+  --to-h: calc(var(--from-h) - 30);
+  --to-s: calc(var(--from-s) + 20%);
+  --to-l: calc(var(--from-l) + 10%);
 
   margin: $base-unit;
 
@@ -75,6 +75,7 @@ export default class Home extends Vue {}
     opacity: 0.85;
     overflow: hidden;
     text-decoration: none;
+    text-shadow: 0 0 4px rgba(#000, .25);
     transition: $base-transition;
 
     &:hover {

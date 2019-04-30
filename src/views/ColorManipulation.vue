@@ -6,7 +6,7 @@
     <p>
       This isn't an example specific to VueJS, as the color variables are provided in
       fragments&mdash;namely <strong>hue</strong>, <strong>saturation</strong>, and
-      <strong>lightness</strong> (HSV colors). VueJS is simply used to control these values from
+      <strong>lightness</strong> (HSV colors). VueJS is simply used to set these values from
       user input.
     </p>
 
@@ -16,6 +16,12 @@
           class="box"
           v-bind:style="boxStyleObject"></div>
         Solid
+      </div>
+      <div class="grid__item">
+        <div
+          class="box box--hue-shifted"
+          v-bind:style="boxStyleObject"></div>
+        Hue-shifted
       </div>
       <div class="grid__item">
         <div
@@ -66,7 +72,8 @@
       shaded/lightened colors are calculated by means of using <code>calc()</code>, e.g.:
     </p>
 
-    <pre><code>--l-shaded: calc(var(--l) - 35%);
+    <pre><code>--h-shifted: calc(var(--h) + 30);
+--l-shaded: calc(var(--l) - 25%);
 --l-lightened: calc(var(--l) + 35%);</code></pre>
   </div>
 </template>
@@ -121,30 +128,34 @@ export default class ColorManipulation extends Vue {
 }
 
 .box {
-  width: 25vmin;
-  height: 25vmin;
+  width: 15vmin;
+  height: 15vmin;
   margin-bottom: $base-unit * 2;
   border-radius: 50%;
+  box-shadow: $base-box-shadow;
   background-color: hsl(var(--h, 0), var(--s, 0%), var(--l, 0%));
 }
 
+.box--hue-shifted {
+  --h-shifted: calc(var(--h) + 30);
+  background-color: hsl(var(--h-shifted, 0), var(--s, 0%), var(--l, 0%));
+}
+
 .box--shaded {
-  --l-shaded: calc(var(--l) - 35%);
-  background-image: 
-    linear-gradient(
-      45deg,
-      hsl(var(--h, 0), var(--s, 0%), var(--l, 0%)),
-      hsl(var(--h, 0), var(--s, 0%), var(--l-shaded, 0%)),
-    );
+  --l-shaded: calc(var(--l) - 25%);
+  background-image:  linear-gradient(
+    45deg,
+    hsl(var(--h, 0), var(--s, 0%), var(--l, 0%)) 15%,
+    hsl(var(--h, 0), var(--s, 0%), var(--l-shaded, 0%)) 85%,
+  );
 }
 
 .box--lightened {
   --l-lightened: calc(var(--l) + 35%);
-  background-image: 
-    linear-gradient(
-      45deg,
-      hsl(var(--h, 0), var(--s, 0%), var(--l, 0%)),
-      hsl(var(--h, 0), var(--s, 0%), var(--l-lightened, 0%)),
-    );
+  background-image: linear-gradient(
+    45deg,
+    hsl(var(--h, 0), var(--s, 0%), var(--l, 0%)) 15%,
+    hsl(var(--h, 0), var(--s, 0%), var(--l-lightened, 0%)) 85%,
+  );
 }
 </style>
