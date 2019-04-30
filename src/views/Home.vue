@@ -51,10 +51,10 @@ export default class Home extends Vue {}
 .tiled-navigation__item {
   --from-h: 207;
   --from-s: 44%;
-  --from-v: 49%;
+  --from-l: 49%;
   --to-h: calc(var(--from-h) - 20);
   --to-s: calc(var(--from-s) + 50%);
-  --to-v: calc(var(--from-v) - 20%);
+  --to-l: calc(var(--from-l) - 20%);
 
   margin: $base-unit;
 
@@ -66,8 +66,8 @@ export default class Home extends Vue {}
     background-image:
       linear-gradient(
         35deg,
-        hsl(var(--from-h), var(--from-s), var(--from-v)),
-        hsl(var(--to-h), var(--to-s), var(--to-v))
+        hsl(var(--from-h), var(--from-s), var(--from-l)),
+        hsl(var(--to-h), var(--to-s), var(--to-l))
       );
     color: #eee;
     @include font($base-font-size--lg, $base-line-height--lg);
