@@ -8,8 +8,8 @@
 
     <div
       class="form-control-group__control"
-      v-if="$slots.control">
-      <slot name="control"></slot>
+      v-if="$slots.default">
+      <slot></slot>
     </div>
   </div>
 </template>
@@ -30,6 +30,7 @@ export default class UIFormControlGroup extends Vue {
   display: flex;
   align-items: center;
   margin-bottom: $base-unit * 2;
+  width: 100%;
 
   &:last-child {
     margin-bottom: 0;
@@ -40,6 +41,10 @@ export default class UIFormControlGroup extends Vue {
   flex: 0 0 ($base-unit * 25);
   margin-right: $base-unit * 2;
   text-align: right;
+}
+
+.form-control-group__control {
+  flex: 1 1 ($base-unit * 35);
 }
 
 .form-control-group__output {

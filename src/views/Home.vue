@@ -12,7 +12,9 @@
       <li class="tiled-navigation__item">
         <router-link to="/pseudo-element-styling">Pseudo-element Styling</router-link>
       </li>
-      <li class="tiled-navigation__item">
+      <li class="tiled-navigation__item" style="--from-h: 187;">
+        <router-link to="/color-manipulation">Color manipulation</router-link>
+      </li>
       <li class="tiled-navigation__item" style="--from-h: 167;">
         <router-link to="/icon-styling">Icon Styling</router-link>
       </li>

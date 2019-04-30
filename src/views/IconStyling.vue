@@ -48,11 +48,11 @@
                 {{ prettifyCssVar(lightBulbIconCssVar.name) }}
               </UIFormLabel>
             </template>
-            <template v-slot:control>
-              <UIFormColorInput
-                v-bind:id="lightBulbIconCssVar.name"
-                v-model="lightBulbIconCssVar.value" />
-            </template>
+
+            <UIFormColorInput
+              v-bind:id="lightBulbIconCssVar.name"
+              v-model="lightBulbIconCssVar.value" />
+
           </UIFormControlGroup>
         </template>
       </div>
@@ -201,7 +201,7 @@ export default class IconStyling extends Vue {
 }
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 .icon {
   width: $base-unit * 15;
   height: $base-unit * 15;

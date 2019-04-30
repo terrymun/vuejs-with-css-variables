@@ -13,6 +13,11 @@ export default new Router({
       component: Home,
     },
     {
+      path: '/color-manipulation',
+      name: 'color-manipulation',
+      component: () => import(/* webpackChunkName: "color-manipulation" */ './views/ColorManipulation.vue'),
+    },
+    {
       path: '/pseudo-element-styling',
       name: 'pseudo-element-styling',
       component: () => import(/* webpackChunkName: "pseudo-element-styling" */ './views/PseudoElementStyling.vue'),
