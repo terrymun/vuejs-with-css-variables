@@ -11,13 +11,16 @@
     </p>
 
     <div class="wrapper">
-      <UIFlexBox>
+      <UIFlexBox class="controls">
         <UIFlexItem>
           <UIFormControlGroup layout="stacked">
             <template v-slot:label>
               <UIFormLabel>Gutter</UIFormLabel>
             </template>
-            <UIFormNumberInput v-model="gutter" />
+            <UIFormNumberInput
+              v-model="gutter"
+              min="0"
+              step="8" />
           </UIFormControlGroup>
         </UIFlexItem>
         <UIFlexItem>
@@ -25,39 +28,47 @@
             <template v-slot:label>
               <UIFormLabel>Spacing</UIFormLabel>
             </template>
-            <UIFormNumberInput v-model="spacing" />
+            <UIFormNumberInput
+              v-model="spacing"
+              min="0"
+              step="8" />
           </UIFormControlGroup>
         </UIFlexItem>
         <UIFlexItem>
           <UIFormControlGroup layout="stacked">
             <template v-slot:label>
-              <UIFormLabel>Direction</UIFormLabel>
+              <UIFormLabel>Grow</UIFormLabel>
             </template>
-            <UIFormSelect v-model="direction">
-              <option
-                v-for="(direction, i) in directions"
-                v-bind:key="i">
-                {{ direction }}
-              </option>
-            </UIFormSelect>
+            <UIFormNumberInput
+              v-model="grow"
+              min="0" />
+          </UIFormControlGroup>
+        </UIFlexItem>
+        <UIFlexItem>
+          <UIFormControlGroup layout="stacked">
+            <template v-slot:label>
+              <UIFormLabel>Shrink</UIFormLabel>
+            </template>
+            <UIFormNumberInput
+              v-model="shrink"
+              min="0" />
+          </UIFormControlGroup>
+        </UIFlexItem>
+        <UIFlexItem>
+          <UIFormControlGroup layout="stacked">
+            <template v-slot:label>
+              <UIFormLabel>Basis</UIFormLabel>
+            </template>
+            <UIFormInput v-model="basis" />
           </UIFormControlGroup>
         </UIFlexItem>
       </UIFlexBox>
     </div>
 
-    <p v-if="shouldShowHeightNotice">
-      As flexbox will only behave as expected if an explicit height is given when using
-      <code>flex-direction: column</code>, a height of <code>75vh</code> is given to the element
-      when viewing in column format.
-    </p>
-
     <div class="wrapper">
       <UIFlexBox
         class="demo-flex-box"
-        wrap="wrap"
-        v-bind:direction="direction"
-        v-bind:gutter="gutter"
-        v-bind:spacing="spacing">
+        v-bind:style="demoFlexBoxCssStyleObject">
         <UIFlexItem class="demo-flex-item">Lorem</UIFlexItem>
         <UIFlexItem class="demo-flex-item">Ipsum</UIFlexItem>
         <UIFlexItem class="demo-flex-item">Dolor</UIFlexItem>
@@ -76,7 +87,47 @@
         <UIFlexItem class="demo-flex-item">Ipsum</UIFlexItem>
         <UIFlexItem class="demo-flex-item">Dolor</UIFlexItem>
         <UIFlexItem class="demo-flex-item">Sit</UIFlexItem>
-        <UIFlexItem class="demo-flex-item">Amet</UIFlexItem>
+        <UIFlexItem
+          class="demo-flex-item is-target"
+          v-bind:style="targetFlexItemCssStyleObject">Target child</UIFlexItem>
+      </UIFlexBox>
+    </div>
+
+    <p>
+      Since CSS variables are inherited all the down to the flex child, we can override inherited
+      values on a specific item should we wish to:
+    </p>
+
+    <div class="wrapper is-target">
+      <UIFlexBox class="controls">
+        <UIFlexItem>
+          <UIFormControlGroup layout="stacked">
+            <template v-slot:label>
+              <UIFormLabel>Grow</UIFormLabel>
+            </template>
+            <UIFormNumberInput
+              v-model="targetFlexChildGrow"
+              min="0" />
+          </UIFormControlGroup>
+        </UIFlexItem>
+        <UIFlexItem>
+          <UIFormControlGroup layout="stacked">
+            <template v-slot:label>
+              <UIFormLabel>Shrink</UIFormLabel>
+            </template>
+            <UIFormNumberInput
+              v-model="targetFlexChildShrink"
+              min="0" />
+          </UIFormControlGroup>
+        </UIFlexItem>
+        <UIFlexItem>
+          <UIFormControlGroup layout="stacked">
+            <template v-slot:label>
+              <UIFormLabel>Basis</UIFormLabel>
+            </template>
+            <UIFormInput v-model="targetFlexChildBasis" />
+          </UIFormControlGroup>
+        </UIFlexItem>
       </UIFlexBox>
     </div>
 
@@ -88,20 +139,47 @@
     </p>
 
     <div class="wrapper">
-      <UIFlexBox>
+      <UIFlexBox class="controls">
+        <UIFlexItem>
+          <UIFormControlGroup layout="stacked">
+            <template v-slot:label>
+              <UIFormLabel>Grid gap</UIFormLabel>
+            </template>
+            <UIFormNumberInput
+              v-model="gridGap"
+              min="0"
+              step="8" />
+          </UIFormControlGroup>
+
+          <UIFormControlGroup layout="stacked">
+            <template v-slot:label>
+              <UIFormLabel>Column count</UIFormLabel>
+            </template>
+            <UIFormNumberInput
+              v-model="columnCount"
+              min="1" />
+          </UIFormControlGroup>
+        </UIFlexItem>
+
         <UIFlexItem>
           <UIFormControlGroup layout="stacked">
             <template v-slot:label>
               <UIFormLabel>Image start</UIFormLabel>
             </template>
-            <UIFormNumberInput v-model="imageStart" />
+            <UIFormNumberInput
+              v-model="imageStart"
+              min="1"
+              v-bind:max="columnCount + 1" />
           </UIFormControlGroup>
 
           <UIFormControlGroup layout="stacked">
             <template v-slot:label>
               <UIFormLabel>Image end</UIFormLabel>
             </template>
-            <UIFormNumberInput v-model="imageEnd" />
+            <UIFormNumberInput
+              v-model="imageEnd"
+              min="1"
+              v-bind:max="columnCount + 1" />
           </UIFormControlGroup>
         </UIFlexItem>
 
@@ -110,37 +188,28 @@
             <template v-slot:label>
               <UIFormLabel>Text start</UIFormLabel>
             </template>
-            <UIFormNumberInput v-model="textStart" />
+            <UIFormNumberInput
+            v-model="textStart"
+              min="1"
+              v-bind:max="columnCount + 1" />
           </UIFormControlGroup>
           <UIFormControlGroup layout="stacked">
             <template v-slot:label>
               <UIFormLabel>Text end</UIFormLabel>
             </template>
-            <UIFormNumberInput v-model="textEnd" />
-          </UIFormControlGroup>
-        </UIFlexItem>
-
-        <UIFlexItem>
-          <UIFormControlGroup layout="stacked">
-            <template v-slot:label>
-              <UIFormLabel>Hero image start</UIFormLabel>
-            </template>
-            <UIFormNumberInput v-model="heroImageStart" />
-          </UIFormControlGroup>
-          <UIFormControlGroup layout="stacked">
-            <template v-slot:label>
-              <UIFormLabel>Hero image end</UIFormLabel>
-            </template>
-            <UIFormNumberInput v-model="heroImageEnd" />
+            <UIFormNumberInput
+              v-model="textEnd"
+              min="1"
+              v-bind:max="columnCount + 1" />
           </UIFormControlGroup>
         </UIFlexItem>
       </UIFlexBox>
     </div>
- 
+
     <UIGrid
       v-bind:style="gridCssStyleObject">
       <UIGridItem type="image">
-        <img src="https://source.unsplash.com/Bs-zngH79Ds/600x400" />
+        <img src="https://source.unsplash.com/Bs-zngH79Ds/800x400" />
       </UIGridItem>
       <UIGridItem>
         <h3>Lorem ipsum</h3>
@@ -161,20 +230,53 @@
         <img src="https://source.unsplash.com/oCyMED0yyck/1200x500" />
       </UIGridItem>
     </UIGrid>
+
+    <p>
+      The hero image above here is specifically targeted so that we can directly manipulate its
+      <code>grid-column</code> value:
+    </p>
+
+    <div class="wrapper is-target">
+      <UIFlexBox class="controls">
+        <UIFlexItem>
+          <UIFormControlGroup layout="stacked">
+            <template v-slot:label>
+              <UIFormLabel>Hero image start</UIFormLabel>
+            </template>
+            <UIFormNumberInput
+              v-model="heroImageStart"
+              min="1"
+              v-bind:max="columnCount + 1" />
+          </UIFormControlGroup>
+        </UIFlexItem>
+        <UIFlexItem>
+          <UIFormControlGroup layout="stacked">
+            <template v-slot:label>
+              <UIFormLabel>Hero image end</UIFormLabel>
+            </template>
+            <UIFormNumberInput
+              v-model="heroImageEnd"
+              min="1"
+              v-bind:max="columnCount + 1" />
+          </UIFormControlGroup>
+        </UIFlexItem>
+      </UIFlexBox>
+    </div>
   </div>
 </template>
 
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator';
-import UIFlexBox, { Direction } from '@/components/UIFlexBox.vue';
+import UIFlexBox from '@/components/UIFlexBox.vue';
 import UIFlexItem from '@/components/UIFlexItem.vue';
 import UIGrid from '@/components/UIGrid.vue';
 import UIGridItem from '@/components/UIGridItem.vue';
 import UIFormControlGroup from '@/components/UIFormControlGroup.vue';
 import UIFormLabel from '@/components/UIFormLabel.vue';
-import UIFormSelect from '@/components/UIFormSelect.vue';
+import UIFormInput from '@/components/UIFormInput.vue';
 import UIFormNumberInput from '@/components/UIFormNumberInput.vue';
-import { VueCssStyleObject } from '@/types';
+import { Nullable, VueCssStyleObject } from '@/types';
+import { clamp } from '@/framework/utils';
 
 @Component({
   name: 'Layout',
@@ -185,7 +287,7 @@ import { VueCssStyleObject } from '@/types';
     UIGridItem,
     UIFormControlGroup,
     UIFormLabel,
-    UIFormSelect,
+    UIFormInput,
     UIFormNumberInput,
   },
 })
@@ -194,9 +296,21 @@ export default class Layout extends Vue {
 
   public spacing: number = 16;
 
-  public directions = Direction;
+  public grow: number = 1;
 
-  public direction: Direction = Direction.ROW;
+  public shrink: number = 1;
+
+  public basis: string = 'auto';
+
+  public targetFlexChildGrow: number = 1;
+
+  public targetFlexChildShrink: number = 1;
+
+  public targetFlexChildBasis: string = 'auto';
+
+  public gridGap: number = 32;
+
+  public columnCount: number = 12;
 
   public imageStart: number = 1;
 
@@ -211,17 +325,38 @@ export default class Layout extends Vue {
   public textEnd: number = 13;
 
   /** @property */
-  public get shouldShowHeightNotice(): boolean {
-    return this.direction === Direction.COLUMN;
+  public get demoFlexBoxCssStyleObject(): VueCssStyleObject {
+    return {
+      '--gutter': `${this.gutter}px`,
+      '--spacing': `${this.spacing}px`,
+      '--grow': `${this.grow}`,
+      '--shrink': `${this.shrink}`,
+      '--basis': `${this.basis}`,
+      '--wrap': 'wrap',
+    };
+  }
+
+  /** @property */
+  public get targetFlexItemCssStyleObject(): VueCssStyleObject {
+    return {
+      '--grow': `${this.targetFlexChildGrow}`,
+      '--shrink': `${this.targetFlexChildShrink}`,
+      '--basis': `${this.targetFlexChildBasis}`,
+    };
   }
 
   /** @property */
   public get gridCssStyleObject(): VueCssStyleObject {
+    const { columnCount } = this;
+    const maxGridLine = columnCount + 1;
+
     return {
-      '--image-start': `${this.imageStart}`,
-      '--image-end': `${this.imageEnd}`,
-      '--text-start': `${this.textStart}`,
-      '--text-end': `${this.textEnd}`,
+      '--grid-gap': `${clamp(this.gridGap, 0, Infinity)}px`,
+      '--column-count': `${columnCount}`,
+      '--image-start': `${clamp(this.imageStart, 1, maxGridLine)}`,
+      '--image-end': `${clamp(this.imageEnd, 1, maxGridLine)}`,
+      '--text-start': `${clamp(this.textStart, 1, maxGridLine)}`,
+      '--text-end': `${clamp(this.textEnd, 1, maxGridLine)}`,
     };
   }
 
@@ -251,6 +386,13 @@ img {
   object-fit: cover;
 }
 
+.controls {
+  --gutter: #{$base-unit * 2};
+  --grow: 1;
+  --shrink: 1;
+  --basis: 100%;
+}
+
 .demo-flex-box {
   background: repeating-linear-gradient(
     -45deg,
@@ -272,5 +414,18 @@ img {
   @include font($base-font-size--sm, $base-line-height);
   font-weight: bold;
   text-align: center;
+
+  &.is-target {
+    background-color: $base-color-red;
+    color: #fff;
+    padding: 0;
+  }
+}
+
+.is-target {
+  padding: $base-unit * 2;
+  border-radius: $base-border-radius;
+  background-color: $base-color-red;
+  color: #fff;
 }
 </style>

@@ -83,6 +83,7 @@ export default class UIFormInput extends Vue {
 
   display: flex;
   width: 100%;
+  height: $base-unit * 5;
   border: 1px solid var(--app-input-border-color);
   border-radius: $base-border-radius;
   background-color: var(--background-color);
@@ -96,7 +97,7 @@ export default class UIFormInput extends Vue {
 .form-input__native {
   display: block;
   width: 100%;
-  height: $base-unit * 5;
+  height: 100%;
   padding: 0 ($base-unit * 2);
   border: none;
   background-color: transparent;
