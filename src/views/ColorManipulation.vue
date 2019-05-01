@@ -35,7 +35,7 @@
       </div>
     </div>
 
-    <UIFormControlGroup>
+    <UIFormControlGroup width="full">
       <template v-slot:label>
         <UIFormLabel>Hue</UIFormLabel>
       </template>
@@ -43,7 +43,7 @@
       <UIHueSlider v-model="hue" />
     </UIFormControlGroup>
 
-    <UIFormControlGroup>
+    <UIFormControlGroup width="full">
       <template v-slot:label>
         <UIFormLabel>Saturation</UIFormLabel>
       </template>
@@ -54,7 +54,7 @@
         v-bind:max="100" />
     </UIFormControlGroup>
 
-    <UIFormControlGroup>
+    <UIFormControlGroup width="full">
       <template v-slot:label>
         <UIFormLabel>Lightness</UIFormLabel>
       </template>
@@ -79,6 +79,7 @@
 <script lang="ts">
 import { Component, Watch, Vue } from 'vue-property-decorator';
 import UIFormControlGroup from '@/components/UIFormControlGroup.vue';
+import UIFormLabel from '@/components/UIFormLabel.vue';
 import UIFormSlider from '@/components/UIFormSlider.vue';
 import UIHueSlider from '@/components/UIHueSlider.vue';
 import { VueCssStyleObject } from '@/types';
@@ -87,6 +88,7 @@ import { VueCssStyleObject } from '@/types';
   name: 'ColorManipulation',
   components: {
     UIFormControlGroup,
+    UIFormLabel,
     UIFormSlider,
     UIHueSlider,
   },

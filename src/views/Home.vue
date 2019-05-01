@@ -10,13 +10,16 @@
 
     <ul class="tiled-navigation">
       <li class="tiled-navigation__item">
-        <router-link to="/pseudo-element-styling">Pseudo-element Styling</router-link>
-      </li>
-      <li class="tiled-navigation__item" style="--from-h: 147;">
         <router-link to="/color-manipulation">Color manipulation</router-link>
       </li>
-      <li class="tiled-navigation__item" style="--from-h: 87;">
+      <li class="tiled-navigation__item" style="--from-h: 167;">
         <router-link to="/icon-styling">Icon Styling</router-link>
+      </li>
+      <li class="tiled-navigation__item" style="--from-h: 117;">
+        <router-link to="/layout">Layout</router-link>
+      </li>
+      <li class="tiled-navigation__item" style="--from-h: 67;">
+        <router-link to="/pseudo-element-styling">Pseudo-element Styling</router-link>
       </li>
       <li class="tiled-navigation__item" style="--from-h: 37;">
         <router-link to="/themeing">Themeing</router-link>

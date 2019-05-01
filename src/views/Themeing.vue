@@ -8,16 +8,23 @@
       The dropdown below fetches a pre-defined <code>ts</code> file containing theme-related
       variables.
     </p>
-    <UIFormSelect
-      v-model="activeTheme">
-      <option
-        v-for="(theme, i) in themes"
-        v-bind:key="i"
-        v-bind:value="theme.value"
-        >
-        {{ theme.label }}
-      </option>
-    </UIFormSelect>
+
+    <UIFormControlGroup>
+      <template v-slot:label>
+        <UIFormLabel>App theme</UIFormLabel>
+      </template>
+
+      <UIFormSelect
+        v-model="activeTheme">
+        <option
+          v-for="(theme, i) in themes"
+          v-bind:key="i"
+          v-bind:value="theme.value"
+          >
+          {{ theme.label }}
+        </option>
+      </UIFormSelect>
+    </UIFormControlGroup>
 
     <h2>How does it work?</h2>
     <p>
@@ -41,6 +48,8 @@
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator';
 import { Theme, ThemeLabel, ThemeName, ThemePropertiesDictionary } from '@/themes/theme.types';
+import UIFormControlGroup from '@/components/UIFormControlGroup.vue';
+import UIFormLabel from '@/components/UIFormLabel.vue';
 import UIFormSelect from '@/components/UIFormSelect.vue';
 
 import { appState } from '@/store/modules/app';
@@ -54,6 +63,8 @@ interface ThemeOption {
 @Component({
   name: 'Themeing',
   components: {
+    UIFormControlGroup,
+    UIFormLabel,
     UIFormSelect,
   },
 })
