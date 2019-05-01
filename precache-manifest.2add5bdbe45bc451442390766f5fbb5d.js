@@ -1,11 +1,11 @@
 self.__precacheManifest = [
   {
-    "revision": "65fff92e7af8f03c4a5f",
+    "revision": "c20d1f553c6ba4cae2d0",
     "url": "/vuejs-with-css-variables/css/app.fb161c3a.css"
   },
   {
-    "revision": "65fff92e7af8f03c4a5f",
-    "url": "/vuejs-with-css-variables/js/app.b4526b54.js"
+    "revision": "c20d1f553c6ba4cae2d0",
+    "url": "/vuejs-with-css-variables/js/app.8d300472.js"
   },
   {
     "revision": "84eb7a18cb79bc3cdebc",
@@ -28,20 +28,20 @@ self.__precacheManifest = [
     "url": "/vuejs-with-css-variables/js/icon-styling.ddc691bb.js"
   },
   {
-    "revision": "247a684bbc08729abe90",
-    "url": "/vuejs-with-css-variables/css/icon-styling~pseudo-element-styling.145b5eec.css"
+    "revision": "9e597eb98adb0fa0ef47",
+    "url": "/vuejs-with-css-variables/css/icon-styling~pseudo-element-styling.a632aef2.css"
   },
   {
-    "revision": "247a684bbc08729abe90",
-    "url": "/vuejs-with-css-variables/js/icon-styling~pseudo-element-styling.755f615f.js"
+    "revision": "9e597eb98adb0fa0ef47",
+    "url": "/vuejs-with-css-variables/js/icon-styling~pseudo-element-styling.a0b27873.js"
   },
   {
-    "revision": "141c418251d8ce8ecbc5",
-    "url": "/vuejs-with-css-variables/css/layout.b54afd39.css"
+    "revision": "5ee19bdd7fb3a7a79907",
+    "url": "/vuejs-with-css-variables/css/layout.ce9503c6.css"
   },
   {
-    "revision": "141c418251d8ce8ecbc5",
-    "url": "/vuejs-with-css-variables/js/layout.58fd562e.js"
+    "revision": "5ee19bdd7fb3a7a79907",
+    "url": "/vuejs-with-css-variables/js/layout.c0bc3393.js"
   },
   {
     "revision": "b63f451830d2c8caf21e",
@@ -68,15 +68,15 @@ self.__precacheManifest = [
     "url": "/vuejs-with-css-variables/js/theme4.6bec35bc.js"
   },
   {
-    "revision": "5b99130bbd0e6f2beb94",
+    "revision": "ce2e6cdfc703ace9ee53",
     "url": "/vuejs-with-css-variables/css/themeing.437373a0.css"
   },
   {
-    "revision": "5b99130bbd0e6f2beb94",
-    "url": "/vuejs-with-css-variables/js/themeing.8ce8fd63.js"
+    "revision": "ce2e6cdfc703ace9ee53",
+    "url": "/vuejs-with-css-variables/js/themeing.67ccf6b2.js"
   },
   {
-    "revision": "0e8fa1cfab5e64601f13000bc12ba87d",
+    "revision": "c263a0ba4754637d223fa0b0e5d7d571",
     "url": "/vuejs-with-css-variables/index.html"
   },
   {
