@@ -25,6 +25,11 @@
         <router-link to="/themeing">Themeing</router-link>
       </li>
     </ul>
+
+    <p>
+      Looking for the slides that were used to present this demo?
+      <a href="http://slides.com/terrymun/vuejs-with-css-variables/">See it over here</a>.
+    </p>
   </section>
 </template>
 
