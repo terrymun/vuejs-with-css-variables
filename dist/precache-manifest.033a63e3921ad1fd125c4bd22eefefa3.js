@@ -1,23 +1,23 @@
 self.__precacheManifest = [
   {
-    "revision": "46edba56eaa558d47fdd",
+    "revision": "988af82d9eb3ed9eb58a",
     "url": "/vuejs-with-css-variables/css/app.6b01d112.css"
   },
   {
-    "revision": "46edba56eaa558d47fdd",
-    "url": "/vuejs-with-css-variables/js/app.d2d7d00b.js"
+    "revision": "988af82d9eb3ed9eb58a",
+    "url": "/vuejs-with-css-variables/js/app.5362f5a5.js"
   },
   {
     "revision": "84eb7a18cb79bc3cdebc",
     "url": "/vuejs-with-css-variables/js/chunk-vendors.36630957.js"
   },
   {
-    "revision": "4e3b111f6ca5b7f3a9cd",
-    "url": "/vuejs-with-css-variables/css/color-manipulation.f1d96830.css"
+    "revision": "8e67426f2871b3a12d1e",
+    "url": "/vuejs-with-css-variables/css/color-manipulation.dfcb8db2.css"
   },
   {
-    "revision": "4e3b111f6ca5b7f3a9cd",
-    "url": "/vuejs-with-css-variables/js/color-manipulation.e3f9233c.js"
+    "revision": "8e67426f2871b3a12d1e",
+    "url": "/vuejs-with-css-variables/js/color-manipulation.fc701eae.js"
   },
   {
     "revision": "a4638672c290b771b6f3",
@@ -28,20 +28,20 @@ self.__precacheManifest = [
     "url": "/vuejs-with-css-variables/js/icon-styling.ddc691bb.js"
   },
   {
-    "revision": "9e597eb98adb0fa0ef47",
-    "url": "/vuejs-with-css-variables/css/icon-styling~pseudo-element-styling.a632aef2.css"
+    "revision": "333280ce22927199750b",
+    "url": "/vuejs-with-css-variables/css/icon-styling~pseudo-element-styling.e6ff41a1.css"
   },
   {
-    "revision": "9e597eb98adb0fa0ef47",
-    "url": "/vuejs-with-css-variables/js/icon-styling~pseudo-element-styling.a0b27873.js"
+    "revision": "333280ce22927199750b",
+    "url": "/vuejs-with-css-variables/js/icon-styling~pseudo-element-styling.64b4b524.js"
   },
   {
-    "revision": "5ee19bdd7fb3a7a79907",
-    "url": "/vuejs-with-css-variables/css/layout.ce9503c6.css"
+    "revision": "5d7f45d2c1e5f722c2ce",
+    "url": "/vuejs-with-css-variables/css/layout.ebbfca96.css"
   },
   {
-    "revision": "5ee19bdd7fb3a7a79907",
-    "url": "/vuejs-with-css-variables/js/layout.c0bc3393.js"
+    "revision": "5d7f45d2c1e5f722c2ce",
+    "url": "/vuejs-with-css-variables/js/layout.acf12774.js"
   },
   {
     "revision": "b63f451830d2c8caf21e",
@@ -68,15 +68,15 @@ self.__precacheManifest = [
     "url": "/vuejs-with-css-variables/js/theme4.6bec35bc.js"
   },
   {
-    "revision": "ce2e6cdfc703ace9ee53",
-    "url": "/vuejs-with-css-variables/css/themeing.437373a0.css"
+    "revision": "e6056ef9f2df2b9d647f",
+    "url": "/vuejs-with-css-variables/css/themeing.369e77bf.css"
   },
   {
-    "revision": "ce2e6cdfc703ace9ee53",
-    "url": "/vuejs-with-css-variables/js/themeing.67ccf6b2.js"
+    "revision": "e6056ef9f2df2b9d647f",
+    "url": "/vuejs-with-css-variables/js/themeing.8e3d4d70.js"
   },
   {
-    "revision": "48a1ed2b0fd73400836149ce7df0a1d9",
+    "revision": "32292769015532be9df52da1ebdab5c2",
     "url": "/vuejs-with-css-variables/index.html"
   },
   {
