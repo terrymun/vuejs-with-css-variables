@@ -1,6 +1,6 @@
 <template>
   <section>
-    <h1>VueJS + CSS variables</h1>
+    <h1>Supercharging VueJS with CSS variables</h1>
     <span class="byline">By <span class="author">Terry Mun</span></span>
 
     <p>
