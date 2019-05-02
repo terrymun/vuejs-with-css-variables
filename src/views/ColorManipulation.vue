@@ -6,7 +6,7 @@
     <p>
       This isn't an example specific to VueJS, as the color variables are provided in
       fragments&mdash;namely <strong>hue</strong>, <strong>saturation</strong>, and
-      <strong>lightness</strong> (HSV colors). VueJS is simply used to set these values from
+      <strong>lightness</strong> (HSL colors). VueJS is simply used to set these values from
       user input.
     </p>
 

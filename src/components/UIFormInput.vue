@@ -101,7 +101,7 @@ export default class UIFormInput extends Vue {
   padding: 0 ($base-unit * 2);
   border: none;
   background-color: transparent;
-  color: var(--text-color);
+  color: #333;
   @include font($base-font-size, $base-unit * 5);
   font-family: $base-font-family--monospace;
 }
@@ -110,6 +110,6 @@ export default class UIFormInput extends Vue {
   display: flex;
   align-items: center;
   padding: 0 $base-unit;
-  color: var(--text-color);
+  color: #333;
 }
 </style>
