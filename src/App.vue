@@ -3,6 +3,11 @@
     id="app"
     v-bind:style="rootCssStyleObject">
     <router-view/>
+
+    <footer>
+      By <a href="https://github.com/terrymun">Terry Mun</a> &middot; 2018.
+      See the <a href="https://github.com/terrymun/vuejs-with-css-variables">GitHub repo</a>.
+    </footer>
   </main>
 </template>
 
@@ -74,6 +79,7 @@ export default class App extends Vue {
 }
 
 #app {
+  position: relative;
   min-height: 100vh;
   padding: ($base-unit * 8) ($base-unit * 10);
   background-color: var(--app-background-color);
@@ -82,9 +88,22 @@ export default class App extends Vue {
   transition: $base-transition;
 }
 
+footer {
+  position: absolute;
+  bottom: 0;
+  margin: 0 (-$base-unit * 10);
+  padding: ($base-unit * 2) ($base-unit * 10);
+  color: var(--app-text-color);
+  @include font($base-font-size--sm, $base-line-height);
+}
+
 @media (max-width: 400px) {
   #app {
     padding: ($base-unit * 4) ($base-unit * 6);
+  }
+
+  footer {
+    padding: ($base-unit * 2) ($base-unit * 6);
   }
 }
 </style>
