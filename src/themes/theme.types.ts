@@ -24,6 +24,7 @@ export enum ThemePropertiesDictionary {
   appBackgroundColor = '--app-background-color',
   appExternalIcon = '--app-external-icon',
   appInputBorderColor = '--app-input-border-color',
+  appInputTextColor = '--app-input-text-color',
   appLinkColor = '--app-link-color',
   appTextColor = '--app-text-color',
 }

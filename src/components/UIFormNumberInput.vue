@@ -77,7 +77,7 @@ export default class UIFormNumberInput extends Vue {
   border: 1px solid var(--app-input-border-color);
   border-radius: $base-border-radius;
   background-color: #fff;
-  color: #333;
+  color: var(--app-input-text-color);
   @include font($base-font-size, $base-unit * 5);
   font-family: $base-font-family--monospace;
   overflow: hidden;

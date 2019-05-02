@@ -84,7 +84,7 @@ export default class UIFormColorInput extends Vue {
     const textColor = color.isDark() ? '#fff' : '#000';
 
     this.$refs.textInput.$el.style.setProperty('--background-color', color.toString());
-    this.$refs.textInput.$el.style.setProperty('--text-color', textColor);
+    this.$refs.textInput.$el.style.setProperty('--app-input-text-color', textColor);
   }
 
   /** @method */

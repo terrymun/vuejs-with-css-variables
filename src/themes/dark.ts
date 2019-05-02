@@ -6,6 +6,7 @@ export default {
   appBackgroundColor: '#111',
   appExternalIcon: externalIcon(appLinkColor),
   appInputBorderColor: '#999',
+  appInputTextColor: '#333',
   appLinkColor,
   appTextColor: '#eee',
 };
