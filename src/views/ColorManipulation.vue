@@ -122,7 +122,7 @@ export default class ColorManipulation extends Vue {
 }
 
 .grid__item {
-  margin: 0 auto;
+  margin: ($base-unit * 3) auto;
   font-weight: bold;
   text-align: center;
 }
@@ -161,5 +161,22 @@ export default class ColorManipulation extends Vue {
     hsl(var(--h, 0), var(--s, 0%), var(--l, 0%)) 15%,
     hsl(var(--h, 0), var(--s, 0%), var(--l-lightened, 0%)) 85%,
   );
+}
+
+@media (max-width: 768px) {
+  .grid {
+    display: block;
+  }
+
+  .grid__item {
+    margin: ($base-unit * 2) 0;
+  }
+
+  .box {
+    width: 100%;
+    height: $base-unit * 5;
+    margin-bottom: $base-unit;
+    border-radius: $base-border-radius;
+  }
 }
 </style>

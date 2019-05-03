@@ -6,7 +6,7 @@
 
     <footer>
       By <a href="https://github.com/terrymun">Terry Mun</a> &middot; 2018.
-      See the <a href="https://github.com/terrymun/vuejs-with-css-variables">GitHub repo</a>.
+      <a href="https://github.com/terrymun/vuejs-with-css-variables">GitHub repo</a>.
     </footer>
   </main>
 </template>
@@ -99,11 +99,12 @@ footer {
 
 @media (max-width: 400px) {
   #app {
-    padding: ($base-unit * 4) ($base-unit * 6);
+    padding: ($base-unit * 4) ($base-unit * 6) ($base-unit * 10);
   }
 
   footer {
-    padding: ($base-unit * 2) ($base-unit * 6);
+    padding: ($base-unit * 1) ($base-unit * 6);
+    text-align: center;
   }
 }
 </style>

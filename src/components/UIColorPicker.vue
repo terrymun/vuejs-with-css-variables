@@ -7,7 +7,8 @@
       v-on:click="onClick"
       v-on:mousedown="onMouseDown"
       v-on:mousemove="onMouseMove"
-      v-on:mouseup="onMouseUp">
+      v-on:mouseup="onMouseUp"
+      v-on:touchmove="onTouchMove">
     </div>
 
     <UIHueSlider v-model="hue" />
@@ -86,6 +87,19 @@ export default class DummyColorPicker extends Vue {
   }
 
   /** @method */
+  public onTouchMove(e: TouchEvent): void {
+    const touch = e.touches[0];
+    const canvasBoundingClientRect = this.$refs.canvas.getBoundingClientRect();
+    const offsetX = touch.clientX - canvasBoundingClientRect.left;
+    const offsetY = touch.clientY - canvasBoundingClientRect.top;
+
+    this.x = clamp(offsetX, 0, this.$refs.canvas.clientWidth);
+    this.y = clamp(offsetY, 0, this.$refs.canvas.clientHeight);
+
+    e.preventDefault();
+  }
+
+  /** @method */
   @Watch('hue')
   private setColor(): void {
     const h = clamp(this.hue, 0, 360);
@@ -99,6 +113,7 @@ export default class DummyColorPicker extends Vue {
 
 <style lang="scss" scoped>
 .dummy-color-picker {
+  max-width: 100%;
   width: $base-unit * 40;
   margin: ($base-unit * 3) 0;
   padding: $base-unit * 2;

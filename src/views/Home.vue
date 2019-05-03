@@ -91,4 +91,13 @@ export default class Home extends Vue {}
     }
   }
 }
+
+@media (max-width: 400px) {
+  .tiled-navigation__item {
+    a {
+      padding: ($base-unit * 2) ($base-unit * 4);
+      @include font($base-font-size, $base-line-height);
+    }
+  }
+}
 </style>

@@ -71,6 +71,10 @@ a {
 // Code
 pre {
   margin-bottom: $base-unit * 2;
+  padding: ($base-unit * 0.5) ($base-unit * 1.5);
+  border-radius: $base-border-radius;
+  background-color: var(--app-input-border-color);
+  overflow: auto;
 }
 
 code {
@@ -84,4 +88,6 @@ code {
 
 pre code {
   display: block;
+  padding: 0;
+  background-color: transparent;
 }
